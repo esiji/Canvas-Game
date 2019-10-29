@@ -55,7 +55,7 @@ class Game {
         ctx.textAlign = "center"
         ctx.fillText(`Objectves are simple: Gather maximum amount of coins and don't get killed!`, this.width / 2, this.height / 2 - 200)
         ctx.fillText(`Click anywhere to begin!`, this.width / 2, this.height / 2)
-        ctx.fillText(`WASD or arrow keys to move, E to shoot.`, this.width / 2, this.height / 2 + 200)
+        ctx.fillText(`AD or arrow keys to move, E to shoot, W to jump.`, this.width / 2, this.height / 2 + 200)
     }
 
     initializeGame() {
