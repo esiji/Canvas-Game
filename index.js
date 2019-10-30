@@ -1276,7 +1276,6 @@ window.addEventListener("keydown", e => {
     if(e.keyCode === 65 || e.keyCode == 37) {
         player.move("left")
         player.keyPressed = true
-    }if(e.keyCode === 83 || e.keyCode === 40){
     }if(e.keyCode === 68 || e.keyCode === 39){
         player.move("right")
         player.keyPressed = true
