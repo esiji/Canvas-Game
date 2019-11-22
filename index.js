@@ -41,9 +41,9 @@ class Game {
         this.ctx = null
         this.score = 0
         this.background_img = new Image()
-        this.background_img.src = "Images/Flat Nature Art.png"
+        this.background_img.src = "./Images/Flat Nature Art.png"
         this.start = false
-        this.backgroundMusic = new Sound("Sounds/Background.mp3")
+        this.backgroundMusic = new Sound("./Sounds/Background.mp3")
         this.musicOff = true
     }
 
@@ -55,7 +55,7 @@ class Game {
         ctx.textAlign = "center"
         ctx.fillText(`Objectves are simple: Gather maximum amount of coins and don't get killed!`, this.width / 2, this.height / 2 - 200)
         ctx.fillText(`Click anywhere to begin!`, this.width / 2, this.height / 2)
-        ctx.fillText(`WASD or arrow keys to move, E to shoot.`, this.width / 2, this.height / 2 + 200)
+        ctx.fillText(`AD or arrow keys to move, E to shoot, W to jump.`, this.width / 2, this.height / 2 + 200)
     }
 
     initializeGame() {
@@ -130,7 +130,7 @@ class Enemy extends Rectangle {
         this.gravity = 1
         this.state = "idle"
         this.img = new Image()
-        this.src = "Images/Enemy.png"
+        this.src = "./Images/Enemy.png"
         this.img.src = this.src
         this.currentAnimation = 1
         this.animationC = {l: 0, t: 0, w: 51, h: 52}
@@ -146,7 +146,7 @@ class Enemy extends Rectangle {
         this.bowFrame = 0
         this.shooting = false;
         this.shotD = null
-        this.dSound = new Sound("Sounds/Death.mp3")
+        this.dSound = new Sound("./Sounds/Death.mp3")
     }
 
     collideWalls(wall) {
@@ -581,7 +581,7 @@ class Coin extends Rectangle {
         this.game = game
         this.index = 0
         this.frame = 0
-        this.sound = new Sound("Sounds/coin_pickup.wav")
+        this.sound = new Sound("./Sounds/coin_pickup.wav")
     }
 
     changeIndex() {
@@ -610,12 +610,12 @@ class Arrow extends Rectangle {
         super(x, y, width, height)
         this.game = game
         this.img = new Image()
-        this.src = "Images/Arrows.png"
+        this.src = "./Images/Arrows.png"
         this.imgDetails = {l: 0, t: 0, w: 0, h: 0}
         this.direction = direction
         this.frame = 0
         this.owner = owner
-        this.sound = new Sound("Sounds/pew.mp3")
+        this.sound = new Sound("./Sounds/pew.mp3")
     }
 
     setImage() {
@@ -699,7 +699,7 @@ class Player extends Rectangle{
         this.color = "blue"
         this.state = "idle"
         this.img = new Image()
-        this.src = "Images/Player.png"
+        this.src = "./Images/Player.png"
         this.img.src = this.src
         this.currentAnimation = 1
         this.animationC = {l: 0, t: 0, w: 51, h: 52}
@@ -712,8 +712,8 @@ class Player extends Rectangle{
         this.invulnerable = false
         this.invulnerableT = 20
         this.damage = 25
-        this.dSound = new Sound("Sounds/Death.mp3")
-        this.jSound = new Sound("Sounds/Jump.mp3")
+        this.dSound = new Sound("./Sounds/Death.mp3")
+        this.jSound = new Sound("./Sounds/Jump.mp3")
     }
     
     collideWalls(wall) {
@@ -1276,7 +1276,6 @@ window.addEventListener("keydown", e => {
     if(e.keyCode === 65 || e.keyCode == 37) {
         player.move("left")
         player.keyPressed = true
-    }if(e.keyCode === 83 || e.keyCode === 40){
     }if(e.keyCode === 68 || e.keyCode === 39){
         player.move("right")
         player.keyPressed = true
