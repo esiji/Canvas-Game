@@ -8,7 +8,7 @@ let newGame
 let player
 
 for(let i=1; i < 11; i++){
-    coinSrc.push(`Images/Gold_${i}.png`)
+    coinSrc.push(`./Images/Gold_${i}.png`)
 }
 
 class Sound {
@@ -694,7 +694,7 @@ class Player extends Rectangle{
         this.jumping = true
         this.game = game
         this.friction = 0.9
-        this.gravity = 1
+        this.gravity = 0.5
         this.health = 100
         this.color = "blue"
         this.state = "idle"
